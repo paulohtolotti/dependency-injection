@@ -1,5 +1,7 @@
 package com.ph.desafio1.entities;
 
+import com.ph.desafio1.exceptions.DomainException;
+
 public class Order {
     private String code;
     private Double basic;
@@ -7,6 +9,10 @@ public class Order {
 
 
     public Order(String code, Double basic, Double discount) {
+
+        if(basic <= 0) throw new DomainException("Basic price invalid.");
+        if(discount < 0) throw new DomainException("Invalid discount value.");
+
         this.code = code;
         this.basic = basic;
         this.discount = discount;
