@@ -27,17 +27,17 @@ public class Desafio1Application implements CommandLineRunner {
 
         try {
 
-            System.out.print("Order Id: ");
+            System.out.print("Id do pedido: ");
             int id = sc.nextInt();
-            System.out.print("Full Product value: ");
+            System.out.print("Valor base do pedido: ");
             double basic = sc.nextDouble();
-            System.out.print("Discount value (in %): ");
+            System.out.print("Desconto (em %): ");
             double discount = sc.nextDouble();
 
             Order order = new Order(id, basic, discount);
             System.out.println("==============================");
-            System.out.println("Order Id: " + order.getCode());
-            System.out.printf("Total value: R$%.2f", this.orderService.total(order));
+            System.out.println("Pedido código: " + order.getCode());
+            System.out.printf("Valor total: R$%.2f", this.orderService.total(order));
 
         } catch(RuntimeException err) {
             System.out.println(err.getMessage());
