@@ -3,12 +3,12 @@ package com.ph.desafio1.entities;
 import com.ph.desafio1.exceptions.DomainException;
 
 public class Order {
-    private String code;
+    private Integer code;
     private Double basic;
     private Double discount;
 
 
-    public Order(String code, Double basic, Double discount) {
+    public Order(int code, Double basic, Double discount) {
 
         if(basic <= 0) throw new DomainException("Basic price invalid.");
         if(discount < 0) throw new DomainException("Invalid discount value.");
@@ -34,11 +34,11 @@ public class Order {
         this.discount = discount;
     }
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 }
